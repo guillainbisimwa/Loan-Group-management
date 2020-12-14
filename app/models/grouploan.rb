@@ -1,0 +1,2 @@
+class Grouploan < ApplicationRecord
+end
