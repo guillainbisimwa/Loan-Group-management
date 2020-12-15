@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_084846) do
+ActiveRecord::Schema.define(version: 2020_12_15_085528) do
 
   create_table "grouploans", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 2020_12_15_084846) do
     t.string "name"
     t.string "icon"
     t.datetime "createdAt"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.string "name"
+    t.float "amout"
+    t.datetime "createdAt"
+    t.integer "mounts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
