@@ -63,9 +63,10 @@ You can find the full requirements <a href="https://www.notion.so/Group-our-tran
 3. Copy and paste the following code into the Terminal :
    `git clone https://github.com/guillainbisimwa/Loan-Group-management.git`
 4. Run `cd Loan-Group-management`
-5. Install the needed gems `bundle install`
-6. Next, create and migrate the database: `rails db:create` and `rails db:migrate`
-7. run ails server
+5. Install the needed dependencies `yarn install`
+6. Install the needed gems `bundle install`
+7. Next, create and migrate the database: `rails db:create` and `rails db:migrate`
+8. run ails server
    Postgres: >=9.5
 
 ### Usage
