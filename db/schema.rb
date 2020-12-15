@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_085528) do
+ActiveRecord::Schema.define(version: 2020_12_15_085644) do
 
   create_table "grouploans", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 2020_12_15_085528) do
     t.integer "mounts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_loans_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -43,4 +45,5 @@ ActiveRecord::Schema.define(version: 2020_12_15_085528) do
   end
 
   add_foreign_key "grouploans", "users"
+  add_foreign_key "loans", "users"
 end
