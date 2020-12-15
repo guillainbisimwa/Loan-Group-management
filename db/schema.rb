@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_15_085644) do
+ActiveRecord::Schema.define(version: 2020_12_15_085851) do
 
   create_table "grouploans", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
+    t.integer "loan_id", null: false
+    t.index ["loan_id"], name: "index_grouploans_on_loan_id"
     t.index ["user_id"], name: "index_grouploans_on_user_id"
   end
 
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_085644) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "grouploans", "loans"
   add_foreign_key "grouploans", "users"
   add_foreign_key "loans", "users"
 end
