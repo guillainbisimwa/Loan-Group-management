@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 2020_12_15_085851) do
     t.integer "mounts"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_loans_on_user_id"
+    t.integer "author_id"
+    t.integer "users_id"
+    t.index ["users_id"], name: "index_loans_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +49,5 @@ ActiveRecord::Schema.define(version: 2020_12_15_085851) do
 
   add_foreign_key "grouploans", "loans"
   add_foreign_key "grouploans", "users"
-  add_foreign_key "loans", "users"
+  add_foreign_key "loans", "users", column: "author_id"
 end
