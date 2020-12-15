@@ -1,26 +1,33 @@
-<h2>Log in</h2>
+<div class="mt-5">
+  <div class="">
+    <div class="row">
+      <div class="col-lg-5 col-md-7 ml-auto mr-auto">
+        <div class="card card-login">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="c-bg-primary card-header card-header-primary  text-center p-4">
+              <h4 class="card-title">LOGIN</h4>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+            <p class="description text-center mt-5">Welcome</p>
+            <div class="card-body">
+              <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                  </div>
+                  <%= f.text_field :name, autofocus: true, placeholder: 'Enter your name', class: 'form-control' %>
+              </div>
+            </div>
+            <div class="p-3">
+              <%= f.submit "Log in",  class: "btn text-center c-bg-secondary btn-wd btn-lg d-block m-auto" %>
+            </div>
+            <p class="text-right mr-3"> 
+              <%= render "devise/shared/links" %>
+            </p>
+          <% end %>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
