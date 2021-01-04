@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :users
   #get 'user#login'
   root 'user#index'
 
