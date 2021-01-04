@@ -9,6 +9,6 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def login
-  end
+  # def login
+  # end
 end
