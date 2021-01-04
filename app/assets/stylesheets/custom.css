@@ -1,0 +1,31 @@
+.c-bg-primary {
+  background: #3778c2 !important;
+}
+
+.c-bg-secondary {
+  background: #5fb523 !important;
+}
+
+.c-bg-dark {
+  background: #434b54 !important;
+}
+
+.c-primary {
+  color: #3778c2 !important;
+}
+
+.c-secondary {
+  color: #5fb523 !important;
+}
+
+.c-dark {
+  color: #434b54 !important;
+}
+
+.c-white {
+  color: #fff !important;
+}
+
+.f-s-20 {
+  font-size: 20px !important;
+}

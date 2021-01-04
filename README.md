@@ -43,7 +43,7 @@
 
 <br/>
 
-<b>Loan Group management </b> is loan application groupping system. It's a web application with a good responsive design, built with <b>Ruby on Rails</b> and It facilitates financial inclusionto by giving loans to people.
+<b>Loan Group management </b> is loan application system. It's a web application with a good responsive design, built with <b>Ruby on Rails</b> and It facilitates financial inclusion by giving loans to people.
 You can find the full requirements <a href="https://www.notion.so/Group-our-transactions-ccea2b6642664540a70de9f30bdff4ce" alt="Requirements">here</a>. Exploring this project you can find these options (<b>login</b>, <b> sign-in</b>, ...)
 
 <br/>
@@ -63,10 +63,10 @@ You can find the full requirements <a href="https://www.notion.so/Group-our-tran
 3. Copy and paste the following code into the Terminal :
    `git clone https://github.com/guillainbisimwa/Loan-Group-management.git`
 4. Run `cd Loan-Group-management`
-5. Install the needed gems `bundle install`
-6. Next, create and migrate the database: `rails db:create` and `rails db:migrate`
-7. run ails server
-   Postgres: >=9.5
+5. Install the needed dependencies `yarn install`
+6. Install the needed gems `bundle install`
+7. Next, create and migrate the database: `rails db:create` and `rails db:migrate RAILS_ENV=development`
+8. run `rails server`
 
 ### Usage
 

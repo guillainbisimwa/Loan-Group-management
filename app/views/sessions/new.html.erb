@@ -1,0 +1,24 @@
+ <div class="col-lg-5 col-md-7 ml-auto mr-auto mt-5">
+    <div class="card card-login">
+        <%= form_with scope: :session, url: login_path, method: :post do |f| %>
+        <div class="c-bg-primary card-header card-header-primary  text-center p-4">
+            <h4 class="card-title">Login</h4>
+        </div>
+        <p class="description text-center mt-5">Welcome</p>
+        <div class="card-body">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                </div>
+                  <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
+            </div>
+        </div>
+        <div class="p-3">
+             <%= f.submit "Log in", class: ' btn text-center c-bg-secondary btn-wd btn-lg d-block m-auto' %>   
+        </div>
+        
+        <% end %>
+    </div>
+</div>

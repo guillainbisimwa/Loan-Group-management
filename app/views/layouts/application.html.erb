@@ -2,13 +2,45 @@
 <html>
   <head>
     <title>LoanGroup</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <% if notice.present? %>
+    <div>
+    <div class="alert alert-success">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="material-icons">check</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons">clear</i></span>
+          </button>
+            <b> <%= notice %> </b>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if alert.present? %>
+    <div>
+      
+      <div class="alert alert-danger">
+        <div class="container">
+          <div class="alert-icon">
+            <i class="c-white material-icons">error_outline</i>
+          </div>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true"><i class="material-icons f-s-20">clear</i></span>
+          </button>
+          <b> <%= alert %> </b>
+        </div>
+      </div>
 
+    </div>
+  <% end %>
   <body>
     <%= yield %>
   </body>
