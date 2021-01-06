@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-xl c-bg-primary c-white">
     <div class="container-fluid">
       <div class="navbar-wrapper">
-        <i class="material-icons">keyboard_backspace</i>
+        <%= link_to content_tag(:i,"keyboard_backspace", class:"material-icons c-white"), root_path %>
       </div>
 
       <div class="navbar-wrapper">
@@ -25,7 +25,7 @@
         </div>
     </div>
       
-    <hr>
+    <hr />
       <div class="input-group ">
           <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
       </div>
