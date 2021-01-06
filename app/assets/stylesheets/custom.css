@@ -33,3 +33,17 @@
 .f-s-20 {
   font-size: 20px !important;
 }
+
+.form-control2 {
+  background: no-repeat center bottom, center calc(100% - 1px);
+  background-size: 0 100%, 100% 100%;
+  border: 1px #dccdcd solid;
+  height: 36px;
+  transition: background 0s ease-out;
+  padding-left: 0;
+  padding-right: 0;
+  /* border-radius: 0; */
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 5px;
+}
