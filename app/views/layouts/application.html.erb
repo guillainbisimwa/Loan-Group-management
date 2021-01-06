@@ -5,10 +5,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content='width=device-width, initialscale=1.0, maximum-scale=1.0, user-scalable=0'>
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <body>
+
   <% if notice.present? %>
     <div>
     <div class="alert alert-success">
@@ -41,7 +45,7 @@
 
     </div>
   <% end %>
-  <body>
+
     <%= yield %>
   </body>
 </html>
