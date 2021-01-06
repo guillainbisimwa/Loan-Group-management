@@ -10,6 +10,10 @@
   background: #434b54 !important;
 }
 
+.c-bg-white {
+  background: #fff !important;
+}
+
 .c-primary {
   color: #3778c2 !important;
 }
@@ -28,4 +32,20 @@
 
 .f-s-20 {
   font-size: 20px !important;
+}
+
+.form-control2 {
+  background: no-repeat center bottom, center calc(100% - 1px);
+  background-size: 0 100%, 100% 100%;
+  border: 1px #dccdcd solid;
+  height: 36px;
+  transition: background 0s ease-out;
+  font-size: 14px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bmd-form-group {
+  position: relative;
+  padding-top: 1px !important;
 }
