@@ -47,3 +47,8 @@
   border-radius: 5px;
   padding: 5px;
 }
+
+.bmd-form-group {
+  position: relative;
+  padding-top: 1px !important;
+}

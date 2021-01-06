@@ -1,0 +1,34 @@
+<%= form_with scope: :session, url: signup_path, method: :post do |f| %>
+
+  <nav class="navbar navbar-expand-xl c-bg-primary c-white">
+    <div class="container-fluid">
+      <div class="navbar-wrapper">
+        <i class="material-icons">keyboard_backspace</i>
+      </div>
+
+      <div class="navbar-wrapper">
+        <p class="navbar-brand" href="#">REGISTER</p>
+      </div>
+      <div class="navbar-wrapper">
+        <%= f.submit "Next", class: 'btn btn-link c-white' %>  
+      </div>
+    </div>
+    </nav>
+    <div class="card  pb-5 px-4">
+
+    <div class="p-0 m-0 info info-horizontal">
+      <div class="icon">
+        <i class="material-icons">account_circle</i>
+      </div>
+        <div class="description">
+          <p class="info-title">Upload picture</p>
+        </div>
+    </div>
+      
+    <hr>
+      <div class="input-group ">
+          <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
+      </div>
+    </div>
+
+<% end %>

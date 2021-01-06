@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   get 'login', to: 'sessions#new'
   get 'signup', to: 'sessions#signup'
-  #post'signup', to: 'sessions#signup'
+  post'signup', to: 'sessions#register'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 end
