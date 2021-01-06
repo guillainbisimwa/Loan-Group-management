@@ -4,7 +4,7 @@ class UserController < ApplicationController
   def new; end
 
   def index
-    #redirect_to user_path if logged_in?
+    # redirect_to user_path if logged_in?
   end
 
   def create
@@ -12,7 +12,7 @@ class UserController < ApplicationController
   end
 
   def show
-    #@user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @user = User.all
   end
 

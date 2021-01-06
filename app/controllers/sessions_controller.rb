@@ -4,15 +4,15 @@ class SessionsController < ApplicationController
   def signup; end
 
   def register
-    #byebug
+    # byebug
     @user = User.new(user_params)
-    #byebug
+    # byebug
     if @user.save
       session[:user_name] = @user.name
       flash[:notice] = 'You are successfully registered'
       redirect_to home_path
     else
-      flash[:alert] = "Error occurs while saving user"
+      flash[:alert] = 'Error occurs while saving user'
       redirect_to home_path
     end
   end
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     return if @user.nil?
 
     session[:user_name] = @user.name
-    flash[:notice] = "Welcome to our application"
+    flash[:notice] = 'Welcome to our application'
     redirect_to home_path
   end
 
