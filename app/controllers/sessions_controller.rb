@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to home_path
     else
       flash[:alert] = 'Error occurs while saving user'
-      redirect_to home_path
+      redirect_to signup_path
     end
   end
 
