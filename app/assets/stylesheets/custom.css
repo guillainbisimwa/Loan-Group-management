@@ -45,7 +45,24 @@
   padding: 5px;
 }
 
+.navbar2 {
+  margin-bottom: 0 !important;
+}
+
+.card {
+  margin-top: 0 !important;
+  border-radius: 0 !important;
+}
+
 .bmd-form-group {
   position: relative;
   padding-top: 1px !important;
+}
+
+.info-title {
+  font-weight: normal !important;
+}
+
+.info2 {
+  max-width: 100% !important;
 }
