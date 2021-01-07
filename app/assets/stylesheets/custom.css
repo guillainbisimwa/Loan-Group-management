@@ -66,3 +66,11 @@
 .info2 {
   max-width: 100% !important;
 }
+
+.w-auto {
+  width: auto !important;
+}
+
+.fs-60 {
+  font-size: 55px;
+}
