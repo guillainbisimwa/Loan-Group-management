@@ -1,5 +1,5 @@
 <section class="users-section">
- <nav class="navbar navbar-expand-xl c-bg-primary c-white navbar2">
+  <nav class="navbar navbar-expand-xl c-bg-primary c-white navbar2">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -16,31 +16,35 @@
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
+              <li>
+                <div class="pt-3">
+                  <div class="text-center">
+                  <div class="icon">
+                    <i class="material-icons fs-60 c-dark">account_circle</i>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-category text-gray">User</h6>
+                      <h4 class="card-title">Guy</h4>
+                      <p class="card-description">
+                      </p>
+                      <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
-                  <i class="material-icons">home</i>
-                    Home
-                  </span>
-                <div class="ripple-container"></div></a>
+                <%= link_to content_tag(:i,"home", class:"material-icons") + " Home" , home_path, class:'nav-link active' %>
               </li>
               
                <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
-                  <i class="material-icons">groups</i>
-                    All groups
-                  </span>
-                <div class="ripple-container"></div></a>
+                <%= link_to content_tag(:i,"groups", class:"material-icons") + " All groups", group_path, class:'nav-link' %>
               </li>
 
                <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
                   <i class="material-icons">exit_to_app</i>
                     Logout
-                  </span>
-                <div class="ripple-container"></div></a>
+                </a>
               </li>
             </ul>
           </div>
@@ -74,11 +78,11 @@
             </p>
             <div>
               <hr class="m-0" />
-              <label class="font-italic">12/01/2020</label>
+              <label class="date">12/01/2020</label>
             </div>
           </div>
         </div>
-        <div class="align-self-center">$ 50</div>
+        <h3 class="align-self-center">$ 50</h3>
       </div>
     </div>
 
@@ -94,11 +98,11 @@
             </p>
             <div>
               <hr class="m-0" />
-              <label class="font-italic">12/01/2020</label>
+              <label class="date">12/01/2020</label>
             </div>
           </div>
         </div>
-        <div class="align-self-center">$ 50</div>
+        <h3 class="align-self-center">$ 50</h3>
       </div>
     </div>
 
@@ -114,11 +118,11 @@
             </p>
             <div>
               <hr class="m-0" />
-              <label class="font-italic">12/01/2020</label>
+              <label class="date">12/01/2020</label>
             </div>
           </div>
         </div>
-        <div class="align-self-center">$ 50</div>
+        <h3 class="align-self-center">$ 50</h3>
       </div>
     </div>
 

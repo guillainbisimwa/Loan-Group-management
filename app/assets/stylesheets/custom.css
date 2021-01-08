@@ -26,6 +26,10 @@
   color: #434b54 !important;
 }
 
+.active {
+  background: #f7f7f7;
+}
+
 .c-white {
   color: #fff !important;
 }

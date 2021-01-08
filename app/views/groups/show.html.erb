@@ -9,38 +9,42 @@
           </button>
 
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#">All Groups</a>
+            <a class="navbar-brand" href="#">HOME</a>
           </div>
           <div class="navbar-wrapper">
            <i class="material-icons">search</i>
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
+              <li>
+                <div class="pt-3">
+                  <div class="text-center">
+                  <div class="icon">
+                    <i class="material-icons fs-60 c-dark">account_circle</i>
+                    </div>
+                    <div class="card-body">
+                      <h6 class="card-category text-gray">User</h6>
+                      <h4 class="card-title">Guy</h4>
+                      <p class="card-description">
+                      </p>
+                      <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
-                  <i class="material-icons">home</i>
-                    Home
-                  </span>
-                <div class="ripple-container"></div></a>
+                <%= link_to content_tag(:i,"home", class:"material-icons") + " Home" , home_path, class:'nav-link' %>
               </li>
               
                <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
-                  <i class="material-icons">groups</i>
-                    All groups
-                  </span>
-                <div class="ripple-container"></div></a>
+                <%= link_to content_tag(:i,"groups", class:"material-icons") + " All groups", group_path, class:'nav-link active' %>
               </li>
 
                <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span class="d-lg-none d-md-block">
                   <i class="material-icons">exit_to_app</i>
                     Logout
-                  </span>
-                <div class="ripple-container"></div></a>
+                </a>
               </li>
             </ul>
           </div>
