@@ -14,6 +14,10 @@
   background: #fff !important;
 }
 
+.c-bg-red {
+  background: linear-gradient(60deg, #ec407a, #c2185b);
+}
+
 .c-primary {
   color: #3778c2 !important;
 }
