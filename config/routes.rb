@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'home', to: 'user#show'
   get 'group', to: 'groups#show'
+
   get 'new_group', to: 'groups#new'
+  get 'new_loan', to: 'loans#new'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

@@ -15,9 +15,15 @@
         </div>
     </nav>
     <div class="card pt-4 pb-5 px-4">
-        <div class="input-group ">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="material-icons">group_add</i>
+                </span>
+            </div>
             <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter the name of the group" %>
         </div>
+       
     </div>
 
 <% end %>
