@@ -1,12 +1,16 @@
 class SessionsController < ApplicationController
-  def new; end
+  #before_action :require_user
 
-  def signup; end
+  def new
+    redirect_to home_path if logged_in?
+  end
+
+  def signup
+    redirect_to home_path if logged_in?
+  end
 
   def register
-    # byebug
     @user = User.new(user_params)
-    # byebug
     if @user.save
       session[:user_name] = @user.name
       flash[:notice] = 'You are successfully registered'

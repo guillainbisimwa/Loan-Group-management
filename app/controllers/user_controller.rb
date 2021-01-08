@@ -1,18 +1,18 @@
 class UserController < ApplicationController
   # before_action :authenticate_user!
+  before_action :require_user
 
-  def new; end
-
-  def index
-    # redirect_to user_path if logged_in?
+  def new
+    redirect_to home_path if logged_in?
   end
 
-  def create
-    flash[:notice] = 'Welcome to our app'
+  def index
+    redirect_to home_path if logged_in?
   end
 
   def show
     # @user = User.find(params[:id])
+    
     @user = User.all
   end
 

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #get 'user#login'
-  root 'user#home'
-  resources :users, only: [:show, :new, :create]
+  resources :user, only: [:show, :new, :create, :index]
+  #resources :sessions, only: [:show, :new, :create]
   #resources :groups, only: [:show]
 
   get 'home', to: 'user#show'
@@ -16,4 +16,11 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'sessions#signup'
   post'signup', to: 'sessions#register'
+
+  # resources :users, except: [:index] do
+  #   resources :sessions, only: [:create, :destroy]
+  # end
+  root 'user#index'
+
+
 end
