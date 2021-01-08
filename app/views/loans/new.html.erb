@@ -1,0 +1,37 @@
+<%= form_with scope: :loan, url: root_path, method: :post do |f| %>
+
+    <nav class="navbar navbar-expand-xl c-bg-primary c-white">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <%= link_to content_tag(:i,"keyboard_backspace", class:"material-icons c-white"), home_path %>
+            </div>
+
+            <div class="navbar-wrapper">
+            <p class="navbar-brand" href="#">NEW LOAN</p>
+            </div>
+            <div class="navbar-wrapper">
+                <%= f.submit "Next", class: 'btn btn-link c-white' %>  
+            </div>
+        </div>
+    </nav>
+    <div class="card pt-4 pb-5 px-4">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="material-icons">info</i>
+                </span>
+            </div>
+            <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter loan's details" %>
+        </div>
+
+         <div class="input-group mt-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="material-icons">groups</i>
+                </span>
+            </div>
+            <%= f.collection_select(:groups_ids, Group.all, :name, :icon, { prompt: "Select a group"}, { multiple: false, size: 1, class: "form-control selectpicker" }) %>
+        </div>
+    </div>
+
+<% end %>
