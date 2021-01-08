@@ -73,4 +73,13 @@
 
 .fs-60 {
   font-size: 55px;
+  border-radius: 5px;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+.font-italic {
+  font-style: italic !important;
 }

@@ -32,7 +32,6 @@
             </div>
             <%= f.collection_select(:groups_ids, Group.all, :name, :icon, { prompt: "Select a group"}, { multiple: false, size: 1, class: "form-control selectpicker" }) %>
         </div>
-
     </div>
 
 <% end %>
