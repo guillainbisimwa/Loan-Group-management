@@ -51,25 +51,31 @@
         </div>
       </nav>
     <div class="mt-4">
-      
-    <div class="card m-2 p-3 w-auto">
-      <div class="row justify-content-arround px-3">
-          <div class="mr-2">
-             <i class="material-icons fs-60 card-header-primary p-1 c-white">group</i>
-          </div>
-          <div class="d-flex flex-column col justify-content-around">
-            <p class="font-weight-bold">
-              Group Name
-            </p>
-              <hr class="m-0" />
 
-            <div class="row mx-1 justify-content-between">
-              <label class="font-italic">12/01/2020</label>
-              <label class="font-italic" >By Guillain BISIMWA</label>
+    <% @groups.each do |group| %>
+
+      <div class="card m-2 p-3 w-auto">
+        <div class="row justify-content-arround px-3">
+            <div class="mr-2">
+              <i class="material-icons fs-60 card-header-primary p-1 c-white">group</i>
             </div>
-          </div>
+            <div class="d-flex flex-column col justify-content-around">
+              <p class="font-weight-bold">
+                <%= link_to group.name, group %>
+              </p>
+                <hr class="m-0" />
+
+              <div class="row mx-1 justify-content-between">
+                <label class="font-italic">
+                  <%= group.created_at.strftime("%b %d, %Y - %I:%M%p" ).downcase %>
+                </label>
+                <label class="font-italic" >By <%= group.author.name %></label>
+              </div>
+            </div>
+        </div>
       </div>
-    </div>
+  <% end %>
+
     <div class="row">
       <%= link_to 'New', new_group_path, class: "btn btn-block p-4 btn-lg c-bg-secondary" %>
     </div>

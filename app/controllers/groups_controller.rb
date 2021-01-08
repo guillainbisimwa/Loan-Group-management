@@ -1,9 +1,15 @@
 class GroupsController < ApplicationController
   before_action :require_user
 
-  def new; end
+  def new
+    @group = Group.new
+  end
 
   def index; end
+
+  def show
+    @groups = Group.all
+  end
 
   def create
     @group = Group.new(group_params)
