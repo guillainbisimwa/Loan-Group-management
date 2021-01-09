@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
+    @groups = Group.order(:name)
   end
 
   def show
