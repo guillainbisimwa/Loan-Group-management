@@ -5,10 +5,12 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  def index; end
+  def index
+    @groups = Group.all
+  end
 
   def show
-    @groups = Group.all
+    @group = Group.find(params[:id])
   end
 
   def create
