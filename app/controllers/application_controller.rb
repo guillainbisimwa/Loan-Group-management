@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   helper_method :current_user, :logged_in?
 
   def current_user
@@ -17,6 +16,5 @@ class ApplicationController < ActionController::Base
 
     flash[:alert] = 'You must be logged in!'
     redirect_to login_path
-
   end
 end

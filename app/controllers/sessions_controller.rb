@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  #before_action :require_user
+  # before_action :require_user
 
   def new
     redirect_to home_path if logged_in?

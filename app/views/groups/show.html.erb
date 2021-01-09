@@ -23,7 +23,7 @@
             </p>
         </div>    
     </div>
-    <p>This loan group is created by <%= @group.author.name %> on <%= @group.created_at.strftime("%B %d, %Y at %I:%M%p" ).downcase %> </p>
+    <p>This loan group is created by <b><%= @group.author.name %></b> on <%= @group.created_at.strftime("%B %d, %Y at %I:%M%p" ).downcase %> </p>
     <hr class="m-0" />
     <div class="row mx-1 justify-content-between">
         <b class="h4">

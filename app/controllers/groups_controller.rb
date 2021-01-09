@@ -18,8 +18,8 @@ class GroupsController < ApplicationController
     @group.user_id = current_user.id
 
     if @group.save
-      redirect_to group_path, notice: 'Group was successfully created.'
-    
+      redirect_to groups_path, notice: 'Group was successfully created.'
+
     else
       flash[:alert] = 'Error occurs while saving group'
       redirect_to new_group_url
