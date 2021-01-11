@@ -24,10 +24,19 @@
             <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter loan's details" %>
         </div>
 
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i class="material-icons">euro_symbol</i>
+                </span>
+            </div>
+            <%= f.number_field :name, class: 'form-control', autofocus: true, autocomplete: "Amount", placeholder: "Enter amount" %>
+        </div>
+
          <div class="input-group mt-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">
-                    <i class="material-icons">groups</i>
+                    <i class="material-icons">group</i>
                 </span>
             </div>
             <%= f.collection_select(:groups_ids, Group.all, :name, :icon, { prompt: "Select a group"}, { multiple: false, size: 1, class: "form-control selectpicker" }) %>
