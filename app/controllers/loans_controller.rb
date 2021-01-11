@@ -15,15 +15,14 @@ class LoansController < ApplicationController
     if @loan.save
 
       flash[:notice] = 'You have successfully created loan'
-      byebug
       
-      
-      #@grouploan = Grouploan.new(user_id:@loan.id, user_id:)
+      @grouploan = Grouploan.new(loan_id:@loan.id, group_id: @groups_ids)
+      @grouploan.save unless @groups_ids.empty?
 
       redirect_to home_path
     else
       flash[:alert] = 'Error occurs while saving loan'
-      redirect_to home_path
+      redirect_to new_loan_path
     end
   end
 
