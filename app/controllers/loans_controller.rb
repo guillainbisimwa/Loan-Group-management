@@ -12,6 +12,12 @@ class LoansController < ApplicationController
     @loan.author_id = current_user.id
     @groups_ids = params[:loan][:groups_ids]
 
+    # if @groups_ids.empty?
+    #   flash[:alert] = 'You must choose a group'
+    #   redirect_to new_loan_path
+    #   return
+    # end
+
     if @loan.save
 
       flash[:notice] = 'You have successfully created loan'
