@@ -5,7 +5,9 @@ class LoansController < ApplicationController
     @group = Group.all
   end
 
-  def index; end
+  def index
+    @loans = Loan.all
+  end
 
   def create
     @loan = Loan.new(loan_params)
@@ -25,7 +27,7 @@ class LoansController < ApplicationController
       @grouploan = Grouploan.new(loan_id:@loan.id, group_id: @groups_ids)
       @grouploan.save unless @groups_ids.empty?
 
-      redirect_to home_path
+      redirect_to loans_path
     else
       flash[:alert] = 'Error occurs while saving loan'
       redirect_to new_loan_path

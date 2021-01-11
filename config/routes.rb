@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   #resources :sessions, only: [:show, :new, :create]
   #resources :groups, only: [:show]
   resources :groups, only: [:index, :new, :create, :show]
-  
+
   resources :loans, only: [:index, :new, :create, :show]
   #resources :groups, only: [:index, :show, :new, :edit, :create, :update]
 
-  get 'home', to: 'user#show'
+  get 'home', to: 'user#index'
   #get 'group', to: 'groups#show'
 
   get 'new_group', to: 'groups#new'
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
   # resources :users, except: [:index] do
   #   resources :sessions, only: [:create, :destroy]
   # end
-  root 'user#index'
-
+  root 'sessions#index'
 
 end
