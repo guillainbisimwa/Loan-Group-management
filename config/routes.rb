@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   #resources :sessions, only: [:show, :new, :create]
   #resources :groups, only: [:show]
   resources :groups, only: [:index, :new, :create, :show]
+  
+  resources :loans, only: [:index, :new, :create, :show]
   #resources :groups, only: [:index, :show, :new, :edit, :create, :update]
 
   get 'home', to: 'user#show'
