@@ -18,7 +18,7 @@ class LoansController < ApplicationController
       byebug
       
       
-      @grouploan = Grouploan.new(@loan.id
+      #@grouploan = Grouploan.new(user_id:@loan.id, user_id:)
 
       redirect_to home_path
     else
@@ -30,6 +30,6 @@ class LoansController < ApplicationController
   private
 
   def loan_params
-    params.require(:loan).permit(:name, :amout)
+    params.require(:loan).permit(:name, :amount)
   end
 end
