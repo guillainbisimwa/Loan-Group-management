@@ -6,7 +6,19 @@ class LoansController < ApplicationController
   end
 
   def index
-    @loans = Loan.all
+    @loans = current_user.myloans
+   # byebug
+  end
+
+  def external
+    n = []
+      Grouploan.all.each do |s|
+          n << s.loan_id
+      end
+
+      loans_ids = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
+      
+      @loans = Loan.where(id: loans_ids)
   end
 
   def create

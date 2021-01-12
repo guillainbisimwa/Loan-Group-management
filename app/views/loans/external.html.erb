@@ -34,7 +34,7 @@
      <div class="card m-2 p-3 w-auto">
         <div class="row justify-content-arround px-3">
             <div class="mr-2">
-               <%= content_tag :i, "person", class: 'material-icons fs-60 card-header-info p-1 c-white'  %>
+              <%= icon_loan(loan) %>
             </div>
             <div class="d-flex flex-column col justify-content-around">
                 <div class="row mx-1 justify-content-between" >
@@ -49,7 +49,7 @@
                 <label class="font-italic">
                   <%= loan.created_at.strftime("%b %d, %Y" ).downcase %>
                 </label>
-                <label class="font-italic" >Group: <%= group_name(loan) %></label>
+                <label class="font-italic" ><%= group_name(loan) %></label>
               </div>
             </div>
         </div>
