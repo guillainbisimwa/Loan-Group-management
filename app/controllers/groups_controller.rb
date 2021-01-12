@@ -11,6 +11,12 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
+    @loans = @group.loans.all
+
+    @total_loans = 0
+    @loans.each do |item|
+      @total_loans += item.amount
+    end
   end
 
   def create
