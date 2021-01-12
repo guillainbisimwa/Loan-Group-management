@@ -1,17 +1,11 @@
 class UserController < ApplicationController
   before_action :require_user
 
-  def new
-    #redirect_to home_path if logged_in?
-  end
+  def new; end
 
-  def index
-    #redirect_to home_path if logged_in?
-  end
+  def index; end
 
-  def show
-    #@loans = Loan.all
-  end
+  def show; end
 
   private
 

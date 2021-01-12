@@ -4,9 +4,6 @@ class Loan < ApplicationRecord
 
   belongs_to :creditor, class_name: 'User', foreign_key: :author_id
 
-  #belongs_to :group, foreign_key: :group_id, class_name: 'Group'
-  #has_many :grouploan, foreign_key: :loan_id, class_name: 'Grouploan'
   has_many :grouploans
-  has_many :groups, :through => :grouploans
-
+  has_many :groups, through: :grouploans
 end

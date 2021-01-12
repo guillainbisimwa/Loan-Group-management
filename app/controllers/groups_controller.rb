@@ -14,9 +14,9 @@ class GroupsController < ApplicationController
     @loans = @group.loans.all
 
     @total_loans = 0
-      @loans.each do |item|
-        @total_loans += item.amount
-      end
+    @loans.each do |item|
+      @total_loans += item.amount
+    end
   end
 
   def create

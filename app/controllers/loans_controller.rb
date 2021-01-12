@@ -8,27 +8,26 @@ class LoansController < ApplicationController
   def index
     @loans = current_user.myloans.order(created_at: :desc)
 
-      @total_loans = 0
-      @loans.each do |item|
-        @total_loans += item.amount
-      end
-      
+    @total_loans = 0
+    @loans.each do |item|
+      @total_loans += item.amount
+    end
   end
 
   def external
     n = []
-      Grouploan.all.each do |s|
-          n << s.loan_id
-      end
+    Grouploan.all.each do |s|
+      n << s.loan_id
+    end
 
-      loans_ids = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
-      
-      @loans = Loan.where(id: loans_ids).order(created_at: :desc)
+    loans_ids = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
 
-      @total_loans = 0
-      @loans.each do |item|
-        @total_loans += item.amount
-      end
+    @loans = Loan.where(id: loans_ids).order(created_at: :desc)
+
+    @total_loans = 0
+    @loans.each do |item|
+      @total_loans += item.amount
+    end
   end
 
   def create
@@ -45,8 +44,8 @@ class LoansController < ApplicationController
     if @loan.save
 
       flash[:notice] = 'You have successfully created loan'
-      
-      @grouploan = Grouploan.new(loan_id:@loan.id, group_id: @groups_ids)
+
+      @grouploan = Grouploan.new(loan_id: @loan.id, group_id: @groups_ids)
       @grouploan.save unless @groups_ids.empty?
 
       redirect_to loans_path
