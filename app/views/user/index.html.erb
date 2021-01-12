@@ -52,6 +52,7 @@
       </nav>
 
     <div class="mt-4">
+      <%= link_to loans_path do %>
 
         <div class="card m-2 p-3 w-auto">
             <div class="row justify-content-between px-3">
@@ -72,6 +73,9 @@
                 <h3 class="align-self-center"><%= count_loans(current_user.id) %></h3>
             </div>
         </div>
+      <% end %>
+
+      <%= link_to external_path do %>
 
         <div class="card m-2 p-3 w-auto">
             <div class="row justify-content-between px-3">
@@ -92,6 +96,9 @@
             <h3 class="align-self-center"> <%= count_external_loans() %></h3>
             </div>
         </div>
+      <% end %>
+
+      <%= link_to groups_path do %>
 
         <div class="card m-2 p-3 w-auto">
             <div class="row justify-content-between px-3">
@@ -112,6 +119,8 @@
             <h3 class="align-self-center"><%= count_groups() %></h3>
             </div>
         </div>
+      <% end %>
+
     </div>
 
 
