@@ -6,8 +6,8 @@ class LoansController < ApplicationController
   end
 
   def index
-    @loans = current_user.myloans
-   
+    @loans = current_user.myloans.order(created_at: :desc)
+
       @total_loans = 0
       @loans.each do |item|
         @total_loans += item.amount
@@ -23,7 +23,7 @@ class LoansController < ApplicationController
 
       loans_ids = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
       
-      @loans = Loan.where(id: loans_ids)
+      @loans = Loan.where(id: loans_ids).order(created_at: :desc)
 
       @total_loans = 0
       @loans.each do |item|
