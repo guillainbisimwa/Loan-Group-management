@@ -9,7 +9,8 @@ module UserHelper
         Grouploan.all.each do |s|
             n << s.loan_id
         end
-        cmpt = Loan.ids.reject { |x| n.include?(x) }
+
+        cmpt = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
         cmpt.count
     end
 
