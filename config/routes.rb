@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'new_group', to: 'groups#new'
   get 'new_loan', to: 'loans#new'
+  get 'external', to: 'loans#external'
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
