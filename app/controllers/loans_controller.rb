@@ -7,7 +7,12 @@ class LoansController < ApplicationController
 
   def index
     @loans = current_user.myloans
-   # byebug
+   
+      @total_loans = 0
+      @loans.each do |item|
+        @total_loans += item.amount
+      end
+      
   end
 
   def external
@@ -19,6 +24,11 @@ class LoansController < ApplicationController
       loans_ids = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
       
       @loans = Loan.where(id: loans_ids)
+
+      @total_loans = 0
+      @loans.each do |item|
+        @total_loans += item.amount
+      end
   end
 
   def create

@@ -22,7 +22,7 @@
           </div>
           <div class="description row justify-content-between pt-2">
             <p class="info-title">Total open loans</p>
-            <h4 class="info-title">$ 100</h4>
+            <h4 class="info-title">$ <%= @total_loans %> </h4>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@
             <div class="d-flex flex-column col justify-content-around">
                 <div class="row mx-1 justify-content-between" >
                     <p class="font-weight-bold">
-                        <%= link_to loan.name, loan %>
+                        <%= loan.name %>
                     </p>
                     <b class="">$ <%= loan.amount %></b>
                 </div>
