@@ -8,16 +8,35 @@ RSpec.describe 'Login and sign up', type: :system do
   it 'Logs me in' do
     visit '/'
     click_link 'LOG IN'
-    sleep(5)
+    sleep(3)
 
     expect(page).to have_content 'LOGIN'
 
     element = find(:css, "input[id$='session_name']")
     element.fill_in with: 'Guy'
 
-    click_button 'LOGIN'
-    sleep(5)
+    click_button 'Log in'
 
     expect(page).to have_content 'WELCOME TO OUR APPLICATION'
+    
+    sleep(3)
+
+  end
+
+  it 'Signs up User' do
+    visit '/'
+    click_link 'SIGN UP'
+    sleep(3)
+
+    expect(page).to have_content 'REGISTER'
+
+    element = find(:css, "input[id$='session_name']")
+    element.fill_in with: 'Eva'
+
+    click_button 'Next'
+
+    expect(page).to have_content 'YOU ARE SUCCESSFULLY REGISTERED'
+    sleep(3)
+
   end
 end
