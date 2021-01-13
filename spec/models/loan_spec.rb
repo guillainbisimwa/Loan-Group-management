@@ -15,12 +15,12 @@ RSpec.describe Loan do
     end
 
     it 'confirms the amount of the new loan' do
-        expect(loan.amount).to eq(200)
-      end
-  
-      it 'fails for an invalid amount for the new loan' do
-        expect(loan.amount).to_not eq(20)
-      end
+      expect(loan.amount).to eq(200)
+    end
+
+    it 'fails for an invalid amount for the new loan' do
+      expect(loan.amount).to_not eq(20)
+    end
 
     it 'should have many grouploans' do
       t = Loan.reflect_on_association(:grouploans)

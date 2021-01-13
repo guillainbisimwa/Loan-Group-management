@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Group do
   describe 'Creating an Group' do
-
     let(:user) { User.create(name: 'Guy') }
 
     let(:group) { Group.create(name: 'Barcelona', user_id: user.id) }

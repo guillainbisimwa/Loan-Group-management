@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Create a loan", type: :system do
+RSpec.describe 'Create a loan', type: :system do
   before :each do
     User.create(name: 'Guy')
   end
@@ -31,6 +31,5 @@ RSpec.describe "Create a loan", type: :system do
     click_button 'Next'
 
     expect(page).to have_content 'YOU HAVE SUCCESSFULLY CREATED LOAN'
-
   end
 end

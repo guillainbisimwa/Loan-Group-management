@@ -18,9 +18,8 @@ RSpec.describe 'Login and sign up', type: :system do
     click_button 'Log in'
 
     expect(page).to have_content 'WELCOME TO OUR APPLICATION'
-    
-    sleep(3)
 
+    sleep(3)
   end
 
   it 'Signs up User' do
@@ -37,13 +36,11 @@ RSpec.describe 'Login and sign up', type: :system do
 
     expect(page).to have_content 'YOU ARE SUCCESSFULLY REGISTERED'
     sleep(3)
-
   end
 
   it 'Fails to access home page with an unlogged in user' do
     visit '/home'
     expect(page).to have_content 'YOU MUST BE LOGGED IN!'
     sleep(3)
-
   end
 end

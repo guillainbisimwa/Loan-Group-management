@@ -18,9 +18,8 @@ RSpec.describe "Create a group and see Group's details", type: :system do
 
     expect(page).to have_content 'WELCOME TO OUR APPLICATION'
 
-    
     click_link 'All groups'
-    
+
     expect(page).to have_content 'NEW GROUP'
 
     click_link 'New group'
