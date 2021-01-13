@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  amout: 1.5
+  createdAt: 2020-12-15 10:55:28
+  mounts: 1
+
+two:
+  name: MyString
+  amout: 1.5
+  createdAt: 2020-12-15 10:55:28
+  mounts: 1

@@ -1,0 +1,125 @@
+<section class="users-section">
+  <nav class="navbar navbar-expand-xl c-bg-primary c-white navbar2">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+      </button>
+
+      <div class="navbar-wrapper">
+        <a class="navbar-brand" href="#">HOME</a>
+      </div>
+      <div class="navbar-wrapper">
+        <i class="material-icons">search</i>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end card">
+        <ul class="navbar-nav">
+          <li>
+            <div class="pt-3 ">
+              <div class="text-center">
+                <div class="icon">
+                  <i class="material-icons fs-60 c-dark">account_circle</i>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category text-gray">User</h6>
+                  <h4 class="card-title"><%= current_user.name %></h4>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"home", class:"material-icons") + " Home" , home_path, class:'nav-link  active' %>
+          </li>
+          
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"attach_money", class:"material-icons") + "My loans", loans_path, class:'nav-link ' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"groups", class:"material-icons") + " All groups", groups_path, class:'nav-link ' %>
+          </li>
+
+            <li class="nav-item">
+              <%= link_to content_tag(:i,"exit_to_app", class:"material-icons") + " Log out", logout_path,  class: "nav-link ", method: :delete %>  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="mt-4">
+      <%= link_to loans_path do %>
+
+        <div class="card m-2 p-3 w-auto">
+            <div class="row justify-content-between px-3">
+                <div class="d-flex">
+                    <div class="mr-2">
+                        <i class="material-icons fs-60 card-header-primary p-1 c-white">attach_money</i>
+                    </div>
+                    <div class="d-flex flex-column justify-content-around">
+                        <p class="font-weight-bold">
+                            All my loans
+                        </p>
+                        <div class="d-none d-sm-block">
+                            <hr class="m-0" />
+                            <label class="date">A list of all loans created by <%= current_user.name %> </label>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="align-self-center"><%= count_loans(current_user.id) %></h3>
+            </div>
+        </div>
+      <% end %>
+
+      <%= link_to external_path do %>
+
+        <div class="card m-2 p-3 w-auto">
+            <div class="row justify-content-between px-3">
+            <div class="d-flex">
+                <div class="mr-2">
+                <i class="material-icons fs-60 card-header-info p-1 c-white">person</i>
+                </div>
+                <div class="d-flex flex-column justify-content-around">
+                <p class="font-weight-bold">
+                    All my external loans
+                </p>
+                <div class="d-none d-sm-block">
+                    <hr class="m-0" />
+                    <label class="date">A list of all loans created by <%= current_user.name %> but not assigned to any group </label>
+                </div>
+                </div>
+            </div>
+            <h3 class="align-self-center"> <%= count_external_loans() %></h3>
+            </div>
+        </div>
+      <% end %>
+
+      <%= link_to groups_path do %>
+
+        <div class="card m-2 p-3 w-auto">
+            <div class="row justify-content-between px-3">
+            <div class="d-flex">
+                <div class="mr-2">
+                <i class="material-icons fs-60 card-header-danger p-1 c-white">groups</i>
+                </div>
+                <div class="d-flex flex-column justify-content-around">
+                <p class="font-weight-bold">
+                    All groups
+                </p>
+                <div class="d-none d-sm-block">
+                    <hr class="m-0" />
+                    <label class="date">A list of all groups</label>
+                </div>
+                </div>
+            </div>
+            <h3 class="align-self-center"><%= count_groups() %></h3>
+            </div>
+        </div>
+      <% end %>
+
+    </div>
+
+
+</section>
