@@ -1,55 +1,53 @@
 <section class="users-section">
- <nav class="navbar navbar-expand-xl c-bg-primary c-white navbar2">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
-            <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
-            <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
-          </button>
+  <nav class="navbar navbar-expand-xl c-bg-primary c-white navbar2">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+        <span class="c-bg-white navbar-toggler-icon icon-bar"></span>
+      </button>
 
-          <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#">GROUP</a>
-          </div>
-          <div class="navbar-wrapper">
-           <i class="material-icons">search</i>
-          </div>
-          <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li>
-                <div class="pt-3">
-                  <div class="text-center">
-                  <div class="icon">
-                    <i class="material-icons fs-60 c-dark">account_circle</i>
-                    </div>
-                    <div class="card-body">
-                      <h6 class="card-category text-gray">User</h6>
-                      <h4 class="card-title">Guy</h4>
-                      <p class="card-description">
-                      </p>
-                      <a href="javascript:;" class="btn btn-primary btn-round">Follow</a>
-                    </div>
-                  </div>
+      <div class="navbar-wrapper">
+        <a class="navbar-brand" href="#">ALL GROUPS</a>
+      </div>
+      <div class="navbar-wrapper">
+        <i class="material-icons">search</i>
+      </div>
+      <div class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav">
+          <li>
+            <div class="pt-3 ">
+              <div class="text-center">
+                <div class="icon">
+                  <i class="material-icons fs-60 c-dark">account_circle</i>
                 </div>
-              </li>
-              <li class="nav-item">
-                <%= link_to content_tag(:i,"home", class:"material-icons") + " Home" , home_path, class:'nav-link' %>
-              </li>
-              
-               <li class="nav-item">
-                <%= link_to content_tag(:i,"groups", class:"material-icons") + " All groups", groups_path, class:'nav-link active' %>
-              </li>
+                <div class="card-body">
+                  <h6 class="card-category text-gray">User</h6>
+                  <h4 class="card-title"><%= current_user.name %></h4>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"home", class:"material-icons") + " Home" , home_path, class:'nav-link' %>
+          </li>
+          
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"attach_money", class:"material-icons") + "My loans", loans_path, class:'nav-link ' %>
+          </li>
 
-               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <i class="material-icons">exit_to_app</i>
-                    Logout
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+          <li class="nav-item">
+            <%= link_to content_tag(:i,"groups", class:"material-icons") + " All groups", groups_path, class:'nav-link active' %>
+          </li>
+
+            <li class="nav-item">
+              <%= link_to content_tag(:i,"exit_to_app", class:"material-icons") + " Log out", logout_path,  class: "nav-link ", method: :delete %>  
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="mt-4">
 
     <% @groups.each do |group| %>
@@ -74,7 +72,7 @@
             </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
 
     <div class="row">
       <%= link_to 'New group', new_group_path, class: "btn btn-block p-4 btn-lg c-bg-secondary" %>
