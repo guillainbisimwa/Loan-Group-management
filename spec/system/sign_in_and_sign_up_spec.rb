@@ -39,4 +39,11 @@ RSpec.describe 'Login and sign up', type: :system do
     sleep(3)
 
   end
+
+  it 'Fails to access home page with an unlogged in user' do
+    visit '/home'
+    expect(page).to have_content 'YOU MUST BE LOGGED IN!'
+    sleep(3)
+
+  end
 end
