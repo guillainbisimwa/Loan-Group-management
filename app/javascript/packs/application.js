@@ -8,11 +8,6 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-// import "material-kit/assets/js/core/popper.min.js"
-// import "material-kit/assets/js/core/bootstrap-material-design.min.js"
-// import "material-kit/assets/js/material-kit.js"
-
-
 //= require jquery2
 // import "material-kit/assets/js/core/bootstrap-material-design.min.js"
 //= require "material-kit"

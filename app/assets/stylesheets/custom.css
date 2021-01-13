@@ -1,3 +1,5 @@
+/* stylelint-disable */
+
 .card {
   font-size: 0.875rem;
 }
@@ -16496,3 +16498,5 @@ footer .pull-center {
 .font-italic {
   font-style: italic !important;
 }
+
+/* stylelint-enable */
