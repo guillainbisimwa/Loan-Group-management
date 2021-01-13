@@ -20,16 +20,8 @@ import "material-kit/assets/js/core/popper.min"
 import "material-kit/assets/js/core/bootstrap-material-design.min"
 import "material-kit/assets/js/material-kit"
 
-
 console.log("ok2")
 
-$(document).ready(function(){
-    $("button").click(function(){
-     
-console.log("ok2")
-
-    });
-});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
