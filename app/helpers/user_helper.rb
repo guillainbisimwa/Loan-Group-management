@@ -1,19 +1,13 @@
 module UserHelper
-  def count_loans(_id)
-    Loan.where({ author_id: current_user.id }).count
+  def count_loans
+    User.user_all_loans_count(current_user)
   end
 
-  def count_external_loans()
-    n = []
-    Grouploan.all.each do |s|
-      n << s.loan_id
-    end
-
-    cmpt = Loan.where({ author_id: current_user.id }).ids.reject { |x| n.include?(x) }
-    cmpt.count
+  def count_external_loans
+    Loan.external_loans_count(current_user)
   end
 
-  def count_groups()
+  def count_groups
     Group.count
   end
 end

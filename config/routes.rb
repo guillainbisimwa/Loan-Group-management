@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :user, only: [:show, :new, :create, :index]
+  resources :user, only: [:index]
   resources :groups, only: [:index, :new, :create, :show]
 
   resources :loans, only: [:index, :new, :create, :show]
