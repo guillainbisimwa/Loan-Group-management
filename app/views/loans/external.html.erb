@@ -21,15 +21,15 @@
             </button>
           </div>
           <div class="description row justify-content-between pt-2">
-            <p class="info-title">Total open loans</p>
-            <h4 class="info-title">$ <%= @total_loans %> </h4>
+            <p class="info-title">Total external loans</p>
+            <h4 class="info-title">$ <%= ext_loans_sum %> </h4>
           </div>
         </div>
       </div>
     </div>
 
     
-    <% @loans.each do |loan| %>
+    <% ext_loans.each do |loan| %>
 
      <div class="card m-2 p-3 w-auto">
         <div class="row justify-content-arround px-3">

@@ -10,4 +10,12 @@ module LoansHelper
   def group_name(loan)
     content_tag :b, "Group: #{loan.groups.first.name}", class: 'bold' unless loan.groups.empty?
   end
+
+  def ext_loans
+    Loan.external_loans(current_user)
+  end
+
+  def ext_loans_sum
+    Loan.external_loans_sum(current_user)
+  end
 end
