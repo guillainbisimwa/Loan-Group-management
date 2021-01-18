@@ -8,6 +8,9 @@ class Loan < ApplicationRecord
   has_many :groups, through: :grouploans
 
   scope :external_loans, ->(current_user) { includes(:groups).where(creditor:current_user.id, groups: {id:nil}) }
+  scope :external_loans_sum, ->(current_user) { includes(:groups).where(creditor:current_user.id, groups: {id:nil}).sum(:amount) }
+  
   scope :internal_loans, ->(current_group) { includes(:groups).where(groups: {id:current_group.id}) }
+  scope :internal_loans_sum, ->(current_group) { includes(:groups).where(groups: {id:current_group.id}).sum(:amount)  }
 
 end
