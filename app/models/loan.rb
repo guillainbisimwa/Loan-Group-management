@@ -7,12 +7,11 @@ class Loan < ApplicationRecord
   has_many :grouploans
   has_many :groups, through: :grouploans
 
-  scope :external_loans, ->(current_user) { includes(:groups).where(creditor:current_user.id, groups: {id:nil}).order(created_at: :desc) }
-  scope :external_loans_count, ->(current_user) { includes(:groups).where(creditor:current_user.id, groups: {id:nil}).count }
-  scope :external_loans_sum, ->(current_user) { includes(:groups).where(creditor:current_user.id, groups: {id:nil}).sum(:amount) }
-  
-  scope :internal_loans, ->(current_group) { includes(:groups).where(groups: {id:current_group.id}).order(created_at: :desc) }
-  scope :internal_loans_count, ->(current_group) { includes(:groups).where(groups: {id:current_group.id}).count }
-  scope :internal_loans_sum, ->(current_group) { includes(:groups).where(groups: {id:current_group.id}).sum(:amount)  }
+  scope :ex_loans, ->(user) { includes(:groups).where(creditor: user.id, groups: { id: nil }).order(created_at: :desc) }
+  scope :external_loans_count, ->(user) { includes(:groups).where(creditor: user.id, groups: { id: nil }).count }
+  scope :external_loans_sum, ->(user) { includes(:groups).where(creditor: user.id, groups: { id: nil }).sum(:amount) }
 
+  scope :internal_loans, ->(group) { includes(:groups).where(groups: { id: group.id }).order(created_at: :desc) }
+  scope :internal_loans_count, ->(group) { includes(:groups).where(groups: { id: group.id }).count }
+  scope :internal_loans_sum, ->(group) { includes(:groups).where(groups: { id: group.id }).sum(:amount) }
 end

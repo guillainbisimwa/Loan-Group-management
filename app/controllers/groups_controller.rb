@@ -14,7 +14,6 @@ class GroupsController < ApplicationController
     @loans = Loan.internal_loans(@group)
 
     @total_loans = Loan.internal_loans_sum(@group)
-   
   end
 
   def create

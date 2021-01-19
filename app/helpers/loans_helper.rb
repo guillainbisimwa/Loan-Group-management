@@ -12,7 +12,7 @@ module LoansHelper
   end
 
   def ext_loans
-    Loan.external_loans(current_user)
+    Loan.ex_loans(current_user)
   end
 
   def ext_loans_sum
