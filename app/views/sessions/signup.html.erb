@@ -16,23 +16,23 @@
     </nav>
     <div class="card  pb-5 px-4">
 
-    <div class="p-0 m-0 info info-horizontal">
-      <div class="icon">
-        <i class="material-icons">account_circle</i>
+    <div class="pt-4 m-0 info info-horizontal d-flex align-items-center">
+      <div class="icon-sign">
+        <i class="icon-sign material-icons">account_circle</i>
       </div>
-        <div class="description">
-          <p class="info-title">Upload picture</p>
-        </div>
+      <div class="ml-3 description">
+        <p class="info-title">Upload picture</p>
+      </div>
     </div>
       
     <hr />
      <div class="input-group">
-        <div class="input-group-prepend">
+        <div class="input-group-prepend mt-2">
             <span class="input-group-text">
                 <i class="material-icons">person</i>
             </span>
         </div>
-        <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
+        <%= f.text_field :name, class: 'form-control ml-2', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
       </div>
     </div>
 

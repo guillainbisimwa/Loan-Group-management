@@ -14,15 +14,15 @@
     </nav>
     <div>
       <div class="card px-3 pb-3">
-         <div class="p-0 m-0 info info2 info-horizontal">
-          <div class="icon">
-            <button class="btn c-bg-primary btn-fab btn-fab btn-round">
-              <i class="material-icons">work</i>
-            </button>
-          </div>
-          <div class="description row justify-content-between pt-2">
-            <p class="info-title">Total open loans</p>
-            <h4 class="info-title">$ <%= @total_loans %> </h4>
+         <div class="p-0 m-0 info info2 info-horizontal ">
+          <div class="description row justify-content-between pt-2 mx-2">
+            <div class="row m-2 d-flex align-items-center">
+              <button class="btn c-bg-primary btn-fab btn-fab btn-round">
+                <i class="material-icons">work</i>
+              </button>
+              <p class="mt-1 ml-2 info-title">Total open loans</p>
+            </div>
+            <h4 class="info-title align-self-center">$ <%= @total_loans %> </h4>
           </div>
         </div>
       </div>
