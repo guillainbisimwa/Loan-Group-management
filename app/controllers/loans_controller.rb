@@ -6,7 +6,7 @@ class LoansController < ApplicationController
   end
 
   def index
-    @loans = User.user_all_loans(current_user).myloans.order(created_at: :desc)
+    @loans = User.user_all_loans(current_user)
 
     @total_loans = User.user_all_loans_sum(current_user)
   end
