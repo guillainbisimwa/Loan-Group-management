@@ -1,3 +1,5 @@
+/* stylelint-disable */
+
 .btn.btn-fab,
 .btn.btn-just-icon {
   font-size: 24px;
@@ -386,3 +388,5 @@ button.bg-dark:focus {
 .rounded-0 {
   border-radius: 0 !important;
 }
+
+/* stylelint-enable */
