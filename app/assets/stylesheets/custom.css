@@ -5378,7 +5378,6 @@ small,
     position: fixed;
     display: block;
     top: 0px;
-    height: 100vh;
     width: 230px;
     right: 0;
     margin-right: 0 !important;
@@ -5423,7 +5422,7 @@ small,
     z-index: 3;
   }
   .navbar-collapse .navbar-nav .nav-item .nav-link {
-    color: #3c4858;
+    color: #fff;
     margin: 5px 15px;
   }
   .navbar-collapse .navbar-nav .nav-item.button-container .nav-link {
@@ -5549,7 +5548,7 @@ small,
 }
 
 .active {
-  background: #e0dada;
+  background: #e0dada27;
 }
 
 .c-white {
@@ -5608,6 +5607,11 @@ small,
 
 .font-italic {
   font-style: italic !important;
+}
+
+.navbar-collapse::after {
+  background: #3778c2;
+  color: #fff !important;
 }
 
 /* stylelint-enable */
