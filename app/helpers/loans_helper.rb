@@ -20,7 +20,6 @@ module LoansHelper
   end
 
   def all_loans(loans)
-    
     loans.each do |loan|
       concat(content_tag(:div, class: 'card m-2 p-3 w-auto') do
         concat(content_tag(:div, class: 'row justify-content-arround px-3') do
@@ -30,7 +29,7 @@ module LoansHelper
           concat(content_tag(:div, class: 'd-flex flex-column col justify-content-around') do
             concat(content_tag(:div, class: 'row mx-1 justify-content-between') do
               concat(content_tag(:p, loan.name, class: 'font-weight-bold'))
-              concat(content_tag(:b, '$ ' + (loan.amount).to_s))
+              concat(content_tag(:b, "$ #{loan.amount}"))
             end)
             concat(content_tag(:hr, '', class: 'm-0'))
             concat(content_tag(:div, class: 'row mx-1 justify-content-between') do
