@@ -56,24 +56,52 @@ RSpec.describe Loan do
   end
 
   describe 'Loan model scopes' do
-    let(:user) { User.create(name: 'Guy') }
-    let(:loan) { Loan.create(name: 'Contribution', amount: 200.0, author_id: user.id) }
-    let(:group) { Group.create(name: 'Barcelona', user_id: user.id) }
-    subject { Group.create(name: 'Barcelona', user_id: user.id) }
-    let(:grouploan) { Grouploan.create(loan_id: loan.id, group_id: subject.id) }
 
-    let(:ex_loans) { Loan.ex_loans(user) }
+    before(:context) do
+      user = User.create(name: 'Guy')
+      group = Group.create(name: 'group', user_id: user.id)
+      loan1 = Loan.create(name: 'Contribution1', amount: 200.0, author_id: user.id)
+      loan2 = Loan.create(name: 'Contribution2', amount: 400.0, author_id: user.id)
+      loan3 = Loan.create(name: 'Contribution3', amount: 300.0, author_id: user.id)
+      grouploan = Grouploan.create(loan_id: loan2.id, group_id: group.id)
+    end
+  let(:ex_loans) { Loan.ex_loans(User.last) }
+  let(:external_loans_count) { Loan.external_loans_count(User.last) }
+  let(:external_loans_sum) { Loan.external_loans_sum(User.last) }
 
-    let(:internal_loans) { Loan.internal_loans(group) }
+  let(:internal_loans) { Loan.internal_loans(Group.last) }
+  let(:internal_loans_count) { Loan.internal_loans_count(Group.last) }
+  let(:internal_loans_sum) { Loan.internal_loans_sum(Group.last) }
 
-    it "includes group and return loan's array" do
-      expect(ex_loans).to include(loan)
-      expect(ex_loans).to match_array [loan]
+   
+    it "includes group and return external loan's array" do
+      expect(ex_loans).to include(Loan.where(name: "Contribution3").last)
+      expect(ex_loans).to_not be_empty
+      expect(ex_loans).to match_array [Loan.where(name: "Contribution1").last, Loan.where(name: "Contribution3").last]
     end
 
-    it "includes group and return loan's array2" do
-      expect(internal_loans).to include(subject)
-      # expect( internal_loans ).to match_array [subject]
+    it "includes group and return the nombrer of external's loans" do
+      expect(external_loans_count).to eq(2)
+    end
+
+    it "includes group and return the sum of external's loans" do
+      expect(external_loans_sum).to eq(500.0)
+    end
+
+    it "includes group and return internal loan's array" do
+      expect(internal_loans).to include(Loan.where(name: 'Contribution2').last)
+    end
+
+    it "includes group and return the nombrer of internal's loans" do
+      expect(internal_loans_count).to eq(1)
+    end
+
+    it "includes group and return the sum of internal's loans" do
+      expect(internal_loans_sum).to eq(400.0)
+    end
+
+    it "includes group and return the incorrect sum of internal's loans" do
+      expect(internal_loans_sum).to_not eq(400.1)
     end
   end
 end
