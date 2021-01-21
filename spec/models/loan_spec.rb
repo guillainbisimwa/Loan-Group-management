@@ -65,13 +65,14 @@ RSpec.describe Loan do
       loan3 = Loan.create(name: 'Contribution3', amount: 300.0, author_id: user.id)
       grouploan = Grouploan.create(loan_id: loan2.id, group_id: group.id)
     end
-  let(:ex_loans) { Loan.ex_loans(User.last) }
-  let(:external_loans_count) { Loan.external_loans_count(User.last) }
-  let(:external_loans_sum) { Loan.external_loans_sum(User.last) }
+    
+    let(:ex_loans) { Loan.ex_loans(User.last) }
+    let(:external_loans_count) { Loan.external_loans_count(User.last) }
+    let(:external_loans_sum) { Loan.external_loans_sum(User.last) }
 
-  let(:internal_loans) { Loan.internal_loans(Group.last) }
-  let(:internal_loans_count) { Loan.internal_loans_count(Group.last) }
-  let(:internal_loans_sum) { Loan.internal_loans_sum(Group.last) }
+    let(:internal_loans) { Loan.internal_loans(Group.last) }
+    let(:internal_loans_count) { Loan.internal_loans_count(Group.last) }
+    let(:internal_loans_sum) { Loan.internal_loans_sum(Group.last) }
 
    
     it "includes group and return external loan's array" do

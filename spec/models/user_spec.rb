@@ -35,16 +35,31 @@ RSpec.describe User do
   end
 
   describe 'User model scopes' do
-    let(:user) { User.create(name: 'Guy') }
-    let(:loan) { Loan.create(name: 'Contribution', amount: 200.0, author_id: user.id) }
-    let(:loan2) { Loan.create(name: 'Nothing2', amount: 400.0, author_id: user.id) }
-    let(:loan3) { Loan.create(name: 'Nothing3', amount: 800.0, author_id: user.id) }
 
-    let(:user_all_loans) { User.user_all_loans(user) }
+    before(:context) do
+      user = User.create(name: 'Ruth')
+      loan = Loan.create(name: 'Contribution', amount: 200.0, author_id: user.id)
+      loan2 = Loan.create(name: 'Nothing2', amount: 400.0, author_id: user.id)
+      loan3 = Loan.create(name: 'Nothing3', amount: 800.0, author_id: user.id)  
+    end
+    
+    let(:user_all_loans) { User.user_all_loans(User.last) }
+    let(:user_all_loans_count) { User.user_all_loans_count(User.last) }
+    let(:user_all_loans_sum) { User.user_all_loans_sum(User.last) }
+   
+    it "includes loans and return all loan's array" do
+      expect(user_all_loans).to include(Loan.where(name: "Nothing2").last)
+      expect(user_all_loans).to_not be_empty
+      expect(user_all_loans).to match_array [Loan.where(name: "Contribution").last, Loan.where(name: "Nothing2").last,  Loan.where(name: "Nothing3").last ]
+    end
 
-    it "includes loans and return loan's array" do
-      expect(user_all_loans).to include(loan, loan2, loan3)
-      expect(user_all_loans).to match_array [loan, loan2, loan3]
+    it "includes loans and return the nombrer of all user's loans" do
+      expect(user_all_loans_count).to eq(3)
+    end
+
+    it "includes loans and return the sum of user's loans" do
+      expect(user_all_loans_sum).to_not eq(500.0)
+      expect(user_all_loans_sum).to eq(1400.0)
     end
   end
 end
