@@ -17,7 +17,7 @@ module ApplicationHelper
           concat(content_tag(:button, class: 'close', type: 'button', 'data-dismiss': 'alert', 'aria-label': 'Close') do
             content_tag(:span, content_tag(:i, 'clear', class: 'material-icons'), 'aria-hidden': 'true')
           end)
-          concat(content_tag(:b, flash[:notice], class: ''))
+          concat(content_tag(:b, flash[:notice], class: 'msg'))
         end)
       end)
 
@@ -30,7 +30,7 @@ module ApplicationHelper
           concat(content_tag(:button, class: 'close', type: 'button', 'data-dismiss': 'alert', 'aria-label': 'Close') do
             content_tag(:span, content_tag(:i, 'clear', class: 'material-icons'), 'aria-hidden': 'true')
           end)
-          concat(content_tag(:b, flash[:alert], class: ''))
+          concat(content_tag(:b, flash[:alert], class: 'msg'))
         end)
       end)
 
