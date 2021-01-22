@@ -56,16 +56,15 @@ RSpec.describe Loan do
   end
 
   describe 'Loan model scopes' do
-
     before(:context) do
       user = User.create(name: 'Guy')
       group = Group.create(name: 'group', user_id: user.id)
-      loan1 = Loan.create(name: 'Contribution1', amount: 200.0, author_id: user.id)
+      Loan.create(name: 'Contribution1', amount: 200.0, author_id: user.id)
       loan2 = Loan.create(name: 'Contribution2', amount: 400.0, author_id: user.id)
-      loan3 = Loan.create(name: 'Contribution3', amount: 300.0, author_id: user.id)
-      grouploan = Grouploan.create(loan_id: loan2.id, group_id: group.id)
+      Loan.create(name: 'Contribution3', amount: 300.0, author_id: user.id)
+      Grouploan.create(loan_id: loan2.id, group_id: group.id)
     end
-    
+
     let(:ex_loans) { Loan.ex_loans(User.last) }
     let(:external_loans_count) { Loan.external_loans_count(User.last) }
     let(:external_loans_sum) { Loan.external_loans_sum(User.last) }
@@ -74,11 +73,10 @@ RSpec.describe Loan do
     let(:internal_loans_count) { Loan.internal_loans_count(Group.last) }
     let(:internal_loans_sum) { Loan.internal_loans_sum(Group.last) }
 
-   
     it "includes group and return external loan's array" do
-      expect(ex_loans).to include(Loan.where(name: "Contribution3").last)
+      expect(ex_loans).to include(Loan.where(name: 'Contribution3').last)
       expect(ex_loans).to_not be_empty
-      expect(ex_loans).to match_array [Loan.where(name: "Contribution1").last, Loan.where(name: "Contribution3").last]
+      expect(ex_loans).to match_array [Loan.where(name: 'Contribution1').last, Loan.where(name: 'Contribution3').last]
     end
 
     it "includes group and return the nombrer of external's loans" do
