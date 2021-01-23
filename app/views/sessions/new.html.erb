@@ -1,30 +1,24 @@
-<%= form_with scope: :session, url: login_path, method: :post do |f| %>
-
-    <nav class="navbar navbar-expand-xl c-bg-primary c-white">
-        <div class="container-fluid">
-            <div class="navbar-wrapper">
-                <%= link_to content_tag(:i,"keyboard_backspace", class:"material-icons c-white"), root_path %>
-            </div>
-
-            <div class="navbar-wrapper">
-            <p class="navbar-brand" href="#">LOGIN</p>
-            </div>
-            <div class="navbar-wrapper">
-            <%= f.submit "Log in", class: 'btn btn-link c-white' %>  
+ <div class="col-lg-5 col-md-7 ml-auto mr-auto mt-5">
+    <div class="card card-login">
+        <%= form_with scope: :session, url: login_path, method: :post do |f| %>
+        <div class="c-bg-primary card-header card-header-primary  text-center p-4">
+            <h4 class="card-title">Login</h4>
+        </div>
+        <p class="description text-center mt-5">Welcome</p>
+        <div class="card-body">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">face</i>
+                    </span>
+                </div>
+                  <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
             </div>
         </div>
-    </nav>
-    <div class="card pt-4 pb-5 px-4">
-        <div class="input-group ">
+        <div class="p-3">
+             <%= f.submit "Log in", class: ' btn text-center c-bg-secondary btn-wd btn-lg d-block m-auto' %>   
         </div>
-        <div class="input-group">
-            <div class="input-group-prepend mt-2">
-                <span class="input-group-text">
-                    <i class="material-icons">person</i>
-                </span>
-            </div>
-            <%= f.text_field :name, class: 'form-control ml-2', autofocus: true, autocomplete: "Name", placeholder: "Enter your name" %>
-        </div>
+        
+        <% end %>
     </div>
-
-<% end %>
+</div>

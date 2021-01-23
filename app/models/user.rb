@@ -1,10 +1,10 @@
 class User < ApplicationRecord
+  # # Include default devise modules. Others available are:
+  # # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :validatable
   validates :name, presence: true, length: { maximum: 20 }
 
-  has_many :groups
-  has_many :myloans, foreign_key: :author_id, class_name: 'Loan'
-
-  scope :user_all_loans, ->(current_user) { includes(:myloans).find(current_user.id).myloans.order(created_at: :desc) }
-  scope :user_all_loans_count, ->(current_user) { includes(:myloans).find(current_user.id).myloans.count }
-  scope :user_all_loans_sum, ->(current_user) { includes(:myloans).find(current_user.id).myloans.sum(:amount) }
+  has_many :loans, dependent: :destroy
+  has_many :grouploans, dependent: :destroy
 end
