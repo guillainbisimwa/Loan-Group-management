@@ -112,7 +112,7 @@ After that type the command below into your teminal.
 ```
 
 ```
-    git push heroku master
+    git push heroku main
 ```
 
 Finally, run the command to create your database Heroku
