@@ -16,30 +16,30 @@
     </nav>
     <div class="card pt-4 pb-5 px-4">
         <div class="input-group">
-            <div class="input-group-prepend">
+            <div class="input-group-prepend mt-2">
                 <span class="input-group-text">
                     <i class="material-icons">info</i>
                 </span>
             </div>
-            <%= f.text_field :name, class: 'form-control', autofocus: true, autocomplete: "Name", placeholder: "Enter loan's details" %>
+            <%= f.text_field :name, class: 'form-control ml-2', autofocus: true, autocomplete: "Name", placeholder: "Enter loan's details" %>
         </div>
 
         <div class="input-group">
-            <div class="input-group-prepend">
+            <div class="input-group-prepend mt-2">
                 <span class="input-group-text">
                     <i class="material-icons">euro_symbol</i>
                 </span>
             </div>
-            <%= f.number_field :amount, class: 'form-control', autofocus: true, autocomplete: "Amount", placeholder: "Enter amount" %>
+            <%= f.number_field :amount, class: 'form-control ml-2', autofocus: true, autocomplete: "Amount", placeholder: "Enter amount" %>
         </div>
 
          <div class="input-group mt-3">
-            <div class="input-group-prepend">
+            <div class="input-group-prepend mt-2">
                 <span class="input-group-text">
                     <i class="material-icons">group</i>
                 </span>
             </div>
-            <%= f.collection_select(:groups_ids, @group, :id, :name, { prompt: "Select a group"}, { multiple: false, size: 1, class: "form-control selectpicker" }) %>
+            <%= f.collection_select(:groups_ids, @group, :id, :name, { prompt: "Select a group"}, { multiple: false, size: 1, class: "form-control ml-2 selectpicker" }) %>
         </div>
     </div>
 

@@ -30,6 +30,6 @@ RSpec.describe 'Create a loan', type: :system do
 
     click_button 'Next'
 
-    expect(page).to have_content 'YOU HAVE SUCCESSFULLY CREATED LOAN'
+    expect(page).to have_content 'YOU HAVE SUCCESSFULLY A CREATED LOAN'
   end
 end
