@@ -1,0 +1,37 @@
+<section class="users-section">
+    <nav class="navbar navbar-expand-xl c-bg-primary c-white mb-0">
+        <div class="container-fluid">
+            <div class="navbar-wrapper">
+                <%= link_to content_tag(:i,"keyboard_backspace", class:"material-icons c-white"), home_path %>
+            </div>
+
+            <div class="navbar-wrapper">
+            <p class="navbar-brand" href="#">MY LOANS</p>
+            </div>
+            <div class="navbar-wrapper">
+            </div>
+        </div>
+    </nav>
+    <div>
+      <div class="card px-3 pb-3">
+         <div class="p-0 m-0 info info2 info-horizontal ">
+          <div class="description row justify-content-between pt-2 mx-2">
+            <div class="row m-2 d-flex align-items-center">
+              <button class="btn c-bg-primary btn-fab btn-fab btn-round">
+                <i class="material-icons">work</i>
+              </button>
+              <p class="mt-1 ml-2 info-title">Total open loans</p>
+            </div>
+            <h4 class="info-title align-self-center">$ <%= @total_loans %> </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <% all_loans(@loans) %>
+
+    <div class="row">
+      <%= link_to 'New loan', new_loan_path, class: "btn btn-block p-4 btn-lg c-bg-secondary" %>
+    </div>
+
+</section>

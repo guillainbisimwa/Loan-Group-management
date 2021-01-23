@@ -1,17 +1,7 @@
 class UserController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :require_user
 
-  def index
-    @users = User.all
-  end
-
-  def create
-    flash[:notice] = 'Welcome to our app'
-  end
-
-  def show
-    @user = User.find(params[:id])
-  end
+  def show; end
 
   private
 
